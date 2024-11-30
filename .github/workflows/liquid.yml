@@ -21,6 +21,12 @@ jobs:
             }
           - { ruby: 3.3, allowed-failure: false, rubyopt: "--yjit" }
           - { ruby: ruby-head, allowed-failure: false }
+          - {
+              ruby: ruby-head,
+              allowed-failure: false,
+              rubyopt: "--enable-frozen-string-literal",
+            }
+          - { ruby: ruby-head, allowed-failure: false, rubyopt: "--yjit" }
     name: Test Ruby ${{ matrix.entry.ruby }}
     steps:
       - uses: actions/checkout@v3
